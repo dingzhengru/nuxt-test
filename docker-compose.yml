@@ -10,3 +10,10 @@ services:
       - .:/app
     ports:
       - 3000:3000
+  server:
+    image: nginx:alpine
+    container_name: nuxt_nginx_reverse_proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
