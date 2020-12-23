@@ -1,0 +1,12 @@
+# volumes 成功，不過改資料後，還需重啟 service 才會改變
+version: '3'
+services:
+  nuxt:
+    image: node:lts
+    command: npm run start-docker
+    container_name: nuxt
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000

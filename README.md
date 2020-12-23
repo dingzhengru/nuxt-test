@@ -121,3 +121,8 @@ export default ({ route, redirect }) => {
 參考: https://ithelp.ithome.com.tw/articles/10206412
 
 是一個 hook，asyncData 在執行順序中，排在頁面渲染(render)前，回傳值會被塞回 data
+
+## docker-compose
+
+遇到需要設置 Host=0.0.0.0，參考: https://stackoverflow.com/a/43746783/5134658
+於 package.json 中的 script 新增 `"start-docker": "HOST=0.0.0.0 nuxt start"` 解決
