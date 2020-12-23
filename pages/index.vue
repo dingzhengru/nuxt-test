@@ -1,31 +1,14 @@
 <template>
   <div class="container">
     <div>
-      <router-view />
-    </div>
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-test
-      </h1>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green">
-          Documentation
-        </a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey">
-          GitHub
-        </a>
-      </div>
-    </div>
-    <div>
-      <h2>asyncData</h2>
+      <h2>plugins/siteInfo 取得的資料</h2>
       {{ siteInfo }}
     </div>
 
     <div>
       <h2>Store Getters</h2>
-      {{ counter }}
-      {{ siteTitle }}
+      counter: {{ counter }} <br />
+      siteTitle: {{ siteTitle }}
     </div>
   </div>
 </template>
@@ -54,7 +37,7 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   text-align: center;
 }
