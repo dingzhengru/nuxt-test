@@ -17,9 +17,14 @@ npm run start
 npm run generate
 ```
 
+## layout
+
+等同於原本的 App.vue
+
 ## plugin
 
-執行於實例化 vue 應用程序之前，所要執行的 js 檔案，通常用於引入套件時 Vue.use()
+執行於實例化 vue 應用程序之前，所要執行的 js 檔案
+主要就是用於 main.js 的替代物，本來在 main.js 的內容，都改寫在各個 plugin 中
 
 ## middleware
 
@@ -71,8 +76,6 @@ export default ({ route, redirect }) => {
   }
 };
 ```
-
-## layout
 
 ## scss
 

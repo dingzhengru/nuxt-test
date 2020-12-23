@@ -1,15 +1,23 @@
 <template>
   <div>
-    <div>
-      <ul>
-        <li v-for="item in $router.options.routes" :key="item.name">
-          <router-link :to="{ name: item.name }">{{ item.name }}</router-link>
-        </li>
-      </ul>
-    </div>
+    <header class="app-header">
+      <div v-for="item in $router.options.routes" :key="item.name">
+        <router-link :to="{ name: item.name }">{{ item.name }}</router-link>
+      </div>
+    </header>
     <Nuxt />
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    console.log('[layout]');
+
+    this.$store.commit('increaseCounter');
+  },
+};
+</script>
 
 <style>
 html {
@@ -58,5 +66,19 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+</style>
+
+<style lang="scss" scoped>
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+
+  > div {
+    margin-right: 10px;
+  }
 }
 </style>

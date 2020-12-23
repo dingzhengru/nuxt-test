@@ -19,7 +19,7 @@
     </div>
     <div>
       <h2>asyncData</h2>
-      {{ site }}
+      {{ siteInfo }}
     </div>
 
     <div>
@@ -31,25 +31,16 @@
 </template>
 
 <script>
-import { apiGetSiteInfo } from '~/api/site';
 import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['counter', 'siteTitle']),
+    ...mapGetters(['counter', 'siteInfo', 'siteTitle']),
   },
   data() {
     return {
       site: {},
     };
-  },
-  async asyncData({ store }) {
-    const requestData = { DeviceType: 1 };
-    const result = await apiGetSiteInfo(requestData);
-
-    console.log('[SiteInfo]', result);
-    store.commit('site/setInfo', result.RetObj);
-    return { site: result.RetObj };
   },
   mounted() {
     console.log('11111');
@@ -58,14 +49,6 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-  ul,
-  li {
-    list-style: none;
-  }
-}
-
 .container {
   margin: 0 auto;
   min-height: 100vh;
