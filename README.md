@@ -19,8 +19,7 @@ npm run generate
 
 ## plugin
 
-執行於實例化 vue 應用程序之前，所要執行的 js 檔案
-通常用於 Vue.use() 引入套件時，也可以用於撰寫 beforeEach (因 nuxt 沒有 router.js 讓你修改)
+執行於實例化 vue 應用程序之前，所要執行的 js 檔案，通常用於引入套件時 Vue.use()
 
 ## middleware
 
